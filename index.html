@@ -39,7 +39,7 @@
 
       <section class="px-3 px-md-0">
         <div class="container">
-          <div class="site-name py-4">
+          <div class="site-name">
             <label for="bookmarkName" class="pb-2 fw-semibold">
               <i class="fa-solid fa-book-bookmark pe-2"></i>
               Site Name</label
@@ -51,8 +51,12 @@
               id="bookmark_name"
               oninput="valinputs(this)"
             />
+            <div class="alert alert-danger mt-2 d-none ">
+              bookmark name must contain at least 3 characters
+            </div>
           </div>
-          <div class="site-url">
+
+          <div class="site-url mt-3">
             <label for="bookmarkURL" class="pb-2 fw-semibold">
               <i class="fa-solid fa-link pe-2"></i>Site URL</label
             >
@@ -63,6 +67,9 @@
               id="bookmark_url"
               oninput="valinputs(this)"
             />
+            <div class="alert alert-danger mt-2 d-none">
+              bookmark url must start with https:// or http://
+            </div>
           </div>
         </div>
       </section>
@@ -129,8 +136,7 @@
             </div>
             <div class="modal-body mt-2">
               <h5 class="fw-bold text-dark mb-3">
-                Site Name or Url is not valid,
-                Please follow the rules below :
+                Site Name or Url is not valid, Please follow the rules below :
               </h5>
               <ul class="list-unstyled mb-0">
                 <li>

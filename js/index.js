@@ -30,12 +30,10 @@ function addBookmark() {
     // Clear the inputs
     clearBookmarks();
   } else {
-    
-      const modal = new bootstrap.Modal(
-        document.getElementById("validationModal")
-      );
-      modal.show();
-    
+    const modal = new bootstrap.Modal(
+      document.getElementById("validationModal")
+    );
+    modal.show();
   }
 }
 
@@ -98,8 +96,12 @@ function valinputs(element) {
   if (regex[element.id].test(element.value) == true) {
     element.classList.add("is-valid");
     element.classList.remove("is-invalid");
+
+    element.nextElementSibling.classList.add("d-none");
   } else {
     element.classList.add("is-invalid");
     element.classList.remove("is-valid");
+
+    element.nextElementSibling.classList.remove("d-none");
   }
 }
