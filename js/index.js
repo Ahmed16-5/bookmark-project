@@ -29,26 +29,14 @@ function addBookmark() {
     displayBookmarks();
     // Clear the inputs
     clearBookmarks();
-  }
-  else{
-    const regex = {
-    siteName: /^[A-Z][a-z]{2,10}$/,
-    siteurl: /^(https?:\/\/)?[a-zA-Z0-9\-]+\.[a-z]{2,}(\S*)?$/,
-  };
-//   ???????
-  if (!regex.siteName.test(bookmarkName.value) || !regex.siteurl.test(bookmarkUrl.value)) {
-    
-    const modal = new bootstrap.Modal(
-      document.getElementById("validationModal")
-    );
-    modal.show();
   } else {
     
-    console.log("Valid! Bookmark saved.");
+      const modal = new bootstrap.Modal(
+        document.getElementById("validationModal")
+      );
+      modal.show();
+    
   }
-  }
-
-  
 }
 
 function clearBookmarks() {
