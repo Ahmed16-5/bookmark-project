@@ -1,0 +1,140 @@
+
+body{
+    background-color: #F7ECDE;
+}
+
+h1{
+       font-family: "Pacifico", cursive;
+       font-size: 50px;
+       font-weight: 500;
+       line-height: 60px;
+       color: #352E28;
+       width: fit-content;
+}
+
+.bookmark_border{
+    border: #3d3e3e1a 1px solid;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+}
+
+h2{
+    font-family: "Righteous", cursive;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 8px;
+    color: transparent;
+    margin: 0;
+    background-image: linear-gradient(to right, #3ca55c 0% , #3ca55c 50% , #b5ac49 60% , #b5ac49 100%);
+    background-clip: text;
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.25rem #F9DEB4; 
+  border-color: #FEC260;
+}
+
+::selection{
+    background-color: #FEC260;
+    color: #352E28;
+}
+
+.btn-visit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #9eb23b;
+    --bs-btn-border-color: #9eb23b;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #8a9e23;
+    --bs-btn-hover-border-color: #6e8018;
+}
+
+.btn-delete {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #eb1d36;
+    --bs-btn-border-color: #eb1d36;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d30820;
+    --bs-btn-hover-border-color: #ba081d;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    bottom: 2px;
+    background-color: #fec260;
+    transition: height 350ms;
+    z-index: -1;
+}
+
+h1:hover::before {
+    height: 60%;
+}
+
+
+h4{
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+    color: #212529;
+    margin: 0;
+    text-wrap: nowrap;
+}
+
+.bg-offwhite{
+    background-color: #F8F9FA;
+}
+
+@media  (min-width: 768px) {
+h4{
+    font-size: 16px;
+}
+    
+}
+
+.btn-submit{
+    color: white;
+    background-color: #BB4120;
+    line-height: 24px;
+    font-family: "PT Sans Caption", sans-serif;
+}
+
+.btn-submit:hover{
+    background-color: #A33B1C;
+    color: white;
+}
+
+
+.border-dotted{
+    border-width: 2px 0 0;
+    border-style: dotted;
+    border-color: #352e28;
+}
+
+.custom-modal {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle.red {
+  background-color: #ff605c;
+}
+.circle.yellow {
+  background-color: #ffbd44;
+}
+.circle.green {
+  background-color: #00ca4e;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="py-5 d-flex justify-content-center align-items-center">
+      <h1 class="my-2 position-relative">Bookmarker</h1>
+    </header>
+
+    <main>
+      <section>
+        <div class="container border-dotted">
+          <div class="text-center py-2 mt-3">
+            <h2>
+              <i class="fa-solid fa-bookmark"></i>
+              Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-3 px-md-0">
+        <div class="container">
+          <div class="site-name py-4">
+            <label for="bookmarkName" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name</label
+            >
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              class="form-control"
+              id="bookmark_name"
+              oninput="valinputs(this)"
+            />
+          </div>
+          <div class="site-url">
+            <label for="bookmarkURL" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i>Site URL</label
+            >
+            <input
+              type="url"
+              placeholder="Website URL"
+              class="form-control"
+              id="bookmark_url"
+              oninput="valinputs(this)"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div class="bookmark_btn text-center py-4">
+        <button
+          onclick="addBookmark()"
+          class="btn btn-submit px-5"
+          id="submitBtn"
+        >
+          Submit
+        </button>
+      </div>
+
+      <section>
+        <div class="container border-dotted">
+          <div class="row bg-offwhite mt-4 text-center">
+            <div class="col-3">
+              <h4>Index</h4>
+            </div>
+            <div class="col-3">
+              <h4>Website Name</h4>
+            </div>
+            <div class="col-3">
+              <h4>Visit</h4>
+            </div>
+            <div class="col-3">
+              <h4>Delete</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div
+            class="row bg-offwhite text-center bookmark_container"
+            id="bookmark_container"
+          ></div>
+        </div>
+        <div></div>
+      </section>
+
+      <!-- ????????????? -->
+      <div
+        class="modal fade"
+        id="validationModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content custom-modal p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex gap-2 ms-3">
+                <span class="circle red"></span>
+                <span class="circle yellow"></span>
+                <span class="circle green"></span>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body mt-2">
+              <h5 class="fw-bold text-dark mb-3">
+                Site Name or Url is not valid,
+                Please follow the rules below :
+              </h5>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <i class="fa-solid fa-circle-plus text-danger me-2"></i>
+                  Site name must contain at least 3 characters
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-plus text-danger me-2"></i>
+                  Site URL must be a valid one
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
