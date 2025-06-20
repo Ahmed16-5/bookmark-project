@@ -49,10 +49,11 @@
               placeholder="Bookmark Name"
               class="form-control"
               id="bookmark_name"
-              oninput="valinputs(this)"
+              
             />
             <div class="alert alert-danger mt-2 d-none">
-              bookmark name must contain at least 3 characters & start with a capital letter
+              bookmark name must contain at least 3 characters & start with a
+              capital letter
             </div>
           </div>
 
@@ -65,7 +66,7 @@
               placeholder="Website URL"
               class="form-control"
               id="bookmark_url"
-              oninput="valinputs(this)"
+              
             />
             <div class="alert alert-danger mt-2 d-none">
               bookmark url must start with https:// or http://
@@ -76,7 +77,6 @@
 
       <div class="bookmark_btn text-center py-4">
         <button
-          onclick="addBookmark()"
           class="btn btn-submit px-5"
           id="submitBtn"
         >

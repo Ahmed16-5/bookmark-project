@@ -3,6 +3,28 @@ var bookmarkUrl = document.getElementById("bookmark_url");
 
 var bookmarkList;
 
+// Add event listeners for input validation
+var inputs = document.querySelectorAll("#bookmark_name, #bookmark_url");
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("input", function () {
+    validateInputs(this);
+  });
+}
+
+
+
+// add event listener for the submit button
+var addBookmarkBtn = document.getElementById("submitBtn");
+addBookmarkBtn.addEventListener("click", function () {
+  addBookmark();
+});
+
+var obj={
+  bookmarkList: [],
+  
+}
+
+
 if (localStorage.getItem("bookmarks") === null) {
   bookmarkList = [];
 } else {
@@ -22,7 +44,7 @@ function addBookmark() {
       name: name,
       url: url,
     };
-    console.log(bookmark);
+    // console.log(bookmark);
     bookmarkList.push(bookmark);
     localStorage.setItem("bookmarks", JSON.stringify(bookmarkList));
 
@@ -50,6 +72,8 @@ function clearBookmarks() {
     .classList.remove("is-valid", "is-invalid");
 }
 
+
+
 function displayBookmarks() {
   var cartona = "";
   for (var i = 0; i < bookmarkList.length; i++) {
@@ -62,24 +86,25 @@ function displayBookmarks() {
                   <h4>${bookmarkList[i].name}</h4>
                 </div>
                 <div class="col-3">
-                  <button class="btn btn-visit" onclick="window.open('${
-                    bookmarkList[i].url
-                  }', '_blank')">
+                  <button id="visitBookmarkBtn" class="btn btn-visit" onclick="window.open('${bookmarkList[i].url}', '_blank')">
                     <i class="fa-solid fa-eye "></i>
                     Visit
                   </button>
                 </div>
                 <div class="col-3">
-                  <button class="btn btn-delete pe-2" onclick="deleteBookmark(${i})">
+                  <button id="deleteBookmarkBtn" class="btn btn-delete pe-2" onclick="deleteBookmark(${i})">
                     <i class="fa-solid fa-trash-can"></i>
                     Delete
                   </button>
                 </div>
               </div>
             </div>`;
-  }
-  document.getElementById("bookmark_container").innerHTML = cartona;
+  
+
+
+  
 }
+  document.getElementById("bookmark_container").innerHTML = cartona;}
 
 function deleteBookmark(index) {
   bookmarkList.splice(index, 1);
@@ -88,7 +113,7 @@ function deleteBookmark(index) {
   localStorage.setItem("bookmarks", JSON.stringify(bookmarkList));
 }
 
-function valinputs(element) {
+function validateInputs(element) {
   var regex = {
     bookmark_name: /^[A-Z][a-z]{2,10}$/,
     bookmark_url: /^(https?:\/\/)?[a-zA-Z0-9\-]+\.[a-z]{2,}(\S*)?$/,
@@ -105,3 +130,4 @@ function valinputs(element) {
     element.nextElementSibling.classList.remove("d-none");
   }
 }
+
